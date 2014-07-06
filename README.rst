@@ -1,16 +1,55 @@
 ocl_web
-==============================
+=======
 
-Client interface for Open Concept Lab terminology services API.
-
+Web client interface for Open Concept Lab terminology services API.
 
 LICENSE: BSD
 
+Developer Installation
+-----------------------
+
+1. Clone this repository::
+
+    git clone https://github.com/OpenConceptLab/ocl_web/
+
+2. Set up a virtualenv and virtualenvwrapper::
+    If you aren't familiar with virtualenvs, go here:  TODO:
+    Link to virtualenv setup from Hitchiker's Guide to Python.
+    You don't *have* to use virtualenvwrapper, but this document
+    assumes that you do.
+
+    mkproject ocl_web
+
+3. Install all the supporting libraries into your virtualenv::
+
+    pip install -r requirements/local.txt
+
+4. Install Grunt Dependencies::
+
+    npm install
+
+If you don't have node.js and grunt-cli installed, go here:  TODO
+
+6. Create a database::
+
+    OS X
+    If you don't already have Postgres.app, you should use that:  TODO:  What's that URL?
+
+    createdb ocl_web
+
+7. Create database tables::
+
+    python ocl_web/manage.py syncdb --migrate
+
+7. Run development server. (For browser auto-reload, use Livereload_ plugins.)
+
+    grunt serve
+
+.. _livereload: https://github.com/gruntjs/grunt-contrib-watch#using-live-reload-with-the-browser-extension
+
+
 Settings
 ------------
-
-cookiecutter-django relies extensively on environment settings which **will not work with Apache/mod_wsgi setups**. It has been deployed successfully with both Gunicorn/Nginx and even uWSGI/Nginx.
-
 For configuration purposes, the following table maps the cookiecutter-django environment variables to their Django setting:
 
 ======================================= =========================== ============================================== ===========================================
@@ -34,26 +73,6 @@ DJANGO_SESSION_COOKIE_SECURE            SESSION_COOKIE_SECURE       n/a         
 ======================================= =========================== ============================================== ===========================================
 
 * TODO: Add vendor-added settings in another table
-
-Developer Installation
------------------------
-
-For getting this running on your local machine:
-
-1. Set up a virtualenv.
-2. Install all the supporting libraries into your virtualenv::
-
-    pip install -r requirements/local.txt
-
-3. Install Grunt Dependencies.
-
-    npm install
-
-4. Run development server. (For browser auto-reload, use Livereload_ plugins.)
-
-    grunt serve
-
-.. _livereload: https://github.com/gruntjs/grunt-contrib-watch#using-live-reload-with-the-browser-extension
 
 
 Deployment
