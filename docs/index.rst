@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to ocl_web's documentation!
-====================================================================
+===================================
 
 Contents:
 
@@ -14,8 +14,6 @@ Contents:
    install
    deploy
    tests
-
-
 
 Indices and tables
 ==================

@@ -21,7 +21,7 @@ urlpatterns = patterns('',
         name="concept"),
 
     ######### Orgs
-    url(r'^orgs/', include('apps.orgs.urls')),
+    url(r'^orgs/', include('apps.orgs.urls', namespace="orgs"),
 
     ######### Users
     # List
