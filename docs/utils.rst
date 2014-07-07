@@ -11,8 +11,10 @@ Open Questions:
 ---------------
 
 1. Do the collection and source objects know their owner type?
+ 
     If so, this will probably be easier, and the utils below might not be necessary.
-3. Do the concept objects know about their source?
+
+2. Do the concept objects know about their source?
 
 ``utils.ocl_reverse``
 
